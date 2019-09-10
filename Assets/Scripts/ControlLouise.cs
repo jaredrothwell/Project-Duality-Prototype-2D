@@ -6,8 +6,9 @@ using UnityEngine.UI;
 public class ControlLouise : MonoBehaviour
 {
 	public float speedScalar = 10f;
-	public HealthBar healthBar;
-	public Rigidbody2D rb;
+	public GameObject swordHitbox;
+
+	private Rigidbody2D rb;
 
 
 	// Start is called before the first frame update
@@ -19,13 +20,14 @@ public class ControlLouise : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		Vector3 moveInput = new Vector3(Input.GetAxisRaw("RHorizontal"), Input.GetAxisRaw("RVertical"), 0f);
-		moveInput.Normalize();
-		Vector3 moveVelocity = moveInput * speedScalar;
-		rb.velocity = moveVelocity;
-
-		if (!Input.GetButton("RFire1"))
+		bool swordActive = Input.GetButton("RFire1");
+		swordHitbox.SetActive(swordActive);
+		if (!Model.swordActive)
 		{
+			Vector3 moveInput = new Vector3(Input.GetAxisRaw("RHorizontal"), Input.GetAxisRaw("RVertical"), 0f);
+			moveInput.Normalize();
+			Vector3 moveVelocity = moveInput * speedScalar;
+			rb.velocity = moveVelocity;
 			Vector3 playerDirection = Vector3.left * Input.GetAxisRaw("RHorizontal") + Vector3.down * Input.GetAxisRaw("RVertical");
 			if (playerDirection.sqrMagnitude > 0.0f)
 			{

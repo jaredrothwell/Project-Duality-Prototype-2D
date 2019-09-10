@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class ControlEdmond : MonoBehaviour
 {
 	public float speedScalar = 10f;
-	public Rigidbody2D rb;
+
+	private Rigidbody2D rb;
 
 	// Start is called before the first frame update
 	void Start()

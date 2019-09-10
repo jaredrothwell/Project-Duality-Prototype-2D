@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1914209042379974787}
   - component: {fileID: 1914209042379974784}
   - component: {fileID: 1914209042379974785}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Monster01
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -90,7 +90,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -109,5 +109,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 6567697734090859863, guid: f86de7c87ac06c348a08b04ebb7d73d8, type: 3}
-  totalTimer: 1
-  target: {fileID: 7894563454439545050, guid: 4a68e867708863f4ca2297882e0b2aee, type: 3}
+  totalTimer: 2
+  target: {fileID: 0}

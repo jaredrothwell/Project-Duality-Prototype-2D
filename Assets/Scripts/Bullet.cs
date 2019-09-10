@@ -38,11 +38,16 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.tag == "Shield" || collision.gameObject.tag == "wall")
+        if (other.gameObject.tag == "Shield" || other.gameObject.tag == "Wall")
         {
             Destroy(gameObject);
         }
+		else if(other.gameObject.tag == "PlayerBody")
+		{
+			Model.takeDamage(20);
+			Destroy(gameObject);
+		}
     }
 }

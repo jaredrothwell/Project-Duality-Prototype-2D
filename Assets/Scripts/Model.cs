@@ -8,6 +8,7 @@ public class Model : MonoBehaviour
 	public static GroupState currentGrouping = GroupState.Individual;
 	public static ControlLouise louise;
 	public static ControlEdmond edmond;
+	public static bool swordActive;
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -27,7 +28,6 @@ public class Model : MonoBehaviour
 	public static void takeDamage(int damage)
 	{
 		HP -= damage;
-		Debug.Log(currentGrouping);
 	}
 }
 
