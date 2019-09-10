@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed = 10f;
-    private Rigidbody rb;
+    private Rigidbody2D rb;
     public Transform target;
     public Vector3 heading;
     public float distance;
@@ -16,7 +16,7 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody2D>();
         Vector3 heading = target.position - transform.position;
         distance = heading.magnitude;
         direction = heading / distance;
